@@ -5,8 +5,6 @@ class Ball {
           restitution:0.2,
           friction:0.2,
           density:1.0
-          
-          //this.body = Bodies.rectangle(restitution:0.2,{isStatic:true});
     
       }
       this.width = width;
@@ -23,9 +21,9 @@ class Ball {
       //translate(pos.x, pos.y);
       rotate(angle);
       rectMode(CENTER);
-      fill("red");
+      fill("purple");
       strokeWeight(3);
-      stroke("green");
+      stroke("purple");
       rect(pos.x, pos.y, this.width, this.height);
       pop();
     }
