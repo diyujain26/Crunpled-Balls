@@ -5,6 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 var ball;
+var box1,box2,box3;
 
 function preload()
 {
@@ -20,6 +21,12 @@ function setup() {
 
 	ball = new Ball(100,400,10,10);
 
+	box1 = new Dustbin(500,620,200,10);
+
+	box2 = new Dustbin(395,575,10,100);
+	
+	box3 = new Dustbin(600,575,10,100);
+
 	//Create the Bodies Here.
 
 
@@ -34,6 +41,9 @@ function draw() {
   
   drawSprites();
   ball.display();
+  box1.display();
+  box2.display();
+  box3.display();
  
 }
 
