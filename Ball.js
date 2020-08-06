@@ -1,16 +1,19 @@
 class Ball {
-    constructor(x, y, width, height) {
+    constructor(x, y, radius) {
       var options = {
           isStatic:false,
-          restitution:0.2,
-          friction:0.2,
-          density:1.0
+          restitution:0.3,
+          friction:0.5,
+          density:1.4
     
       }
-      this.width = width;
-      this.height = height;
+      this.x= x;
+      this.y= y;
+      this.radius=radius;
 
-      this.body = Bodies.rectangle(x, y, width , height,{isStatic:true} );
+      //this.body = Bodies.rectangle(x, y, width , height,{isStatic:true} );
+
+      this.body = Bodies.circle(this.x,this.y,this.radius,options);
       
       World.add(world, this.body);
     }
@@ -18,13 +21,13 @@ class Ball {
       var pos = this.body.position;
       var angle = this.body.angle;
       push();
-      //translate(pos.x, pos.y);
+      translate(pos.x, pos.y);
       rotate(angle);
-      rectMode(CENTER);
       fill("purple");
       strokeWeight(3);
       stroke("purple");
-      rect(pos.x, pos.y, this.width, this.height);
+      ellipseMode(RADIUS);
+      ellipse(0,0,this.radius);
       pop();
     }
   };
